@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+		<title>WM GridMaster Exemplo</title>
+		<link rel="stylesheet" type="text/css" href="../wm-gridmaster/jquery.wm-gridmaster-1.0.min.css">
+		<style type="text/css">
+			.wm-grid img{
+				width: 100%;
+			}
+			.btn{
+				display: inline-block;
+				*display: inline;
+				padding: 5px 10px;
+				color: #fff;
+				background: #333;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="body-wrap">
+
+			<h1>WM GridMaster - Exemplo com chamada dos callbacks</h1>
+			<p>
+				O Exemplo abaixo mostra um grid com todos os callbacks executando uma função específica. Note no final da página que será imprimido um texto referente a cada callback.
+			</p>
+			<br>
+
+			<div class="wm-grid">
+				<div class="wm-grid-container">
+					<div class="wm-grid-wrap">
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-1.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-2.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+						
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-3.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-4.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-5.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-6.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-7.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-8.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-9.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-10.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-11.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-12.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-13.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-14.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-15.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-16.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-17.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-18.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-19.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-20.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-21.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-22.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-23.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-24.jpg" alt="">
+							</div>
+							<div class="wm-grid-content">
+								<div class="wm-grid-body"  data-ajax-url="ajax-detalhe.html"></div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<br><br><hr>
+
+			<div>
+				<span class="btn go-to-6">Ir para o item 6</span>
+			</div>
+			<br><hr>
+
+			<h2>Calbacks</h2>
+			<div class="CB_beforeInitGrid">
+				em espera...
+			</div>
+			<div class="CB_afterInitGrid">
+				em espera...
+			</div>
+			<div class="CB_beforeLoadAjax">
+				em espera...
+			</div>
+			<div class="CB_afterLoadAjax">
+				em espera...
+			</div>
+			<div class="CB_beforeOpenDetail">
+				em espera...
+			</div>
+			<div class="CB_afterOpenDetail">
+				em espera...
+			</div>
+			<div class="CB_beforeAjaxOpenDetail">
+				em espera...
+			</div>
+			<div class="CB_afterAjaxOpenDetail">
+				em espera...
+			</div>
+			<div class="CB_closeDetail">
+				em espera...
+			</div>
+			<div class="CB_nextDetail">
+				em espera...
+			</div>
+			<div class="CB_prevDetail">
+				em espera...
+			</div>
+			<div class="CB_goToDetail">
+				em espera...
+			</div>
+
+		</div>
+
+		<script type="text/javascript" src="../assets/js/jquery-1.11.3.min.js"></script>
+		<script src="../wm-gridmaster/jquery.wm-gridmaster-1.0.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var myGrid = $('.wm-grid').wmGridMaster({
+					cols : 10,
+					ajax : {
+						has_ajax : true,
+						url : 'ajax-listagem.html',
+						has_ajax_detail : true
+					},
+					speeds : {
+						go_to_opened : 0
+					},
+					callbacks : {
+					CB_beforeInitGrid : function()
+					{
+						$('.CB_beforeInitGrid').html('CB_beforeInitGrid executado!');
+					},
+					CB_afterInitGrid : function()
+					{
+						$('.CB_afterInitGrid').html('CB_afterInitGrid executado!');
+					},
+					CB_beforeLoadAjax : function()
+					{
+						$('.CB_beforeLoadAjax').html('CB_beforeLoadAjax executado!');
+					},
+					CB_afterLoadAjax : function()
+					{
+						$('.CB_afterLoadAjax').html('CB_afterLoadAjax executado!');
+					},
+					CB_beforeOpenDetail : function()
+					{
+						$('.CB_beforeOpenDetail').html('CB_beforeOpenDetail executado!');
+					},
+					CB_afterOpenDetail : function()
+					{
+						$('.CB_afterOpenDetail').html('CB_afterOpenDetail executado!');
+					},
+					CB_beforeAjaxOpenDetail : function()
+					{
+						$('.CB_beforeAjaxOpenDetail').html('CB_beforeAjaxOpenDetail executado!');
+					},
+					CB_afterAjaxOpenDetail : function()
+					{
+						$('.CB_afterAjaxOpenDetail').html('CB_afterAjaxOpenDetail executado!');
+					},
+					CB_closeDetail : function()
+					{
+						$('.CB_closeDetail').html('CB_closeDetail executado!');
+					},
+					CB_nextDetail : function()
+					{
+						$('.CB_nextDetail').html('CB_nextDetail executado!');
+					},
+					CB_prevDetail : function()
+					{
+						$('.CB_prevDetail').html('CB_prevDetail executado!');
+					},
+					CB_goToDetail : function()
+					{
+						$('.CB_goToDetail').html('CB_goToDetail executado!');
+					}
+				}
+				});
+				myGrid.init();
+
+				$('.go-to-6').on('click', function(){
+
+					// O index parte do zero, assim o item 6 é o 7º da tela.
+					myGrid.goTo($('.wm-grid'), 6);
+
+					return false;
+				});
+			});
+		</script>
+	</body>
+</html>

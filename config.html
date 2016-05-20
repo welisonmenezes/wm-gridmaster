@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="WM Gridfolio - Plugin jQuery para galeria de conteúdo estilo portfólio.">
+		<meta name="keywords" content="Galeria, portfólio, portfolio, plungin, jquery, galery">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="assets/css/app.css">
+
+		<link rel="stylesheet" href="assets/syntaxhighlighter/styles/shCore.css">
+		<link rel="stylesheet" href="assets/syntaxhighlighter/styles/shCoreDefault.css">
+
+		<script type="text/javascript" src="assets/syntaxhighlighter/scripts/shCore.js"></script>
+		<script type="text/javascript" src="assets/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+		<script type="text/javascript" src="assets/syntaxhighlighter/scripts/shBrushXml.js"></script>
+
+		<title>WM GridMaster - Plugin jQuery para galeria de conteúdo estilo portfólio.</title>
+
+		<!--[if lt IE 9]>
+			<script type="text/javascript" src="assets/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+		<nav class="navbar navbar-inverse">
+			<div class="container">
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="index.html" title="Home">Home</a></li>
+						<li><a href="init.html" title="Inicialização">Inicialização</a></li>
+						<li class="active"><a href="config.html" title="Configurações">Configurações</a></li>
+                        <li><a href="exemplo.html" title="Exemplos">Exemplos</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+
+			<div class="row">
+
+			  	<div class="col-sm-12">
+
+			  		<div class="btn-group btn-group-justified">
+				    	<a href="https://github.com/welisonmenezes/wm-gridmaster" target="_blank" class="btn btn-primary" title="WM Gridfolio no Github">GITHUB</a>
+
+				    	<a href="https://twitter.com/WelisonMenezes" target="_blank" class="btn btn-primary" title="Perfil no Twitter">TWITTER</a>
+
+				    	<a href="http://welisonmenezes.com.br/" target="_blank" class="btn btn-primary" title="Portifólio Welison Menezes">WEBSITE</a>
+				    </div>
+
+			  		<article class="body">
+			  			<h1>
+			  				WM GridMaster - Plugin jQuery para galeria de conteúdo estilo portfólio.
+			  			</h1>
+			  			<p>
+			  				Opções de configuração do plugin WM GridMaster.
+			  			</p>
+			  			<hr>
+
+						<dl class="dl-horizontal">
+							<dt style="text-align:left;">cols</dt>
+							<dd>
+								<p>
+									(int) - Seta o número de colunas que o grid terá. Como veremos também é possível trabalhar com responsividade.<br>
+									Exemplo:
+								</p>
+								<pre class="brush: js;">
+									$('.wm-grid').wmGridMaster({
+										cols : 8,
+									});
+								</pre>
+							</dd>
+							<dt style="text-align:left;">close_button_text</dt>
+							<dd>
+								<p>
+									(string) - O texto do botão de fechar o detalhe. <br>Exemplo:
+								</p>
+								<pre class="brush: js;">
+									$('.wm-grid').wmGridMaster({
+										close_button_text : 'X'
+									});
+								</pre>
+							</dd>
+							<dt style="text-align:left;">next_button_text</dt>
+							<dd>
+								<p>
+									(string) - O texto do botão de próximo detalhe. <br>Exemplo:
+								</p>
+								<pre class="brush: js;">
+									$('.wm-grid').wmGridMaster({
+										next_button_text : 'next'
+									});
+								</pre>
+							</dd>
+							<dt style="text-align:left;">prev_button_text</dt>
+							<dd>
+								<p>
+									(string) - O texto do botão de detalhe anterior. <br>Exemplo:
+								</p>
+								<pre class="brush: js;">
+									$('.wm-grid').wmGridMaster({
+										prev_button_text : 'prev'
+									});
+								</pre>
+							</dd>
+							<dt style="text-align:left;">go_to_type</dt>
+							<dd>
+								<p>
+									(string) - onde deve parar o scroll após clicar em algum thumb. Opções: [none, top-thumb, middle-thumb, top-content], onde:<br>
+									<strong>none</strong> = não rola scroll.<br>
+									<strong>top-thumb</strong> = rola para o topo do thumb.<br>
+									<strong>middle-thumb</strong> = rola para o meio do thumb. <br>
+									<strong>top-content</strong> = rola para o topo do conteúdo do detalhe.
+									<br>Exemplo:
+								</p>
+								<pre class="brush: js;">
+									$('.wm-grid').wmGridMaster({
+										go_to_type : 'middle-thumb'
+									});
+								</pre>
+							</dd>
+							<dt style="text-align:left;">has_detail</dt>
+							<dd>
+								<p>
+									(boolean) - define se o thumb terá detalhe ou não. <br>Exemplo:
+								</p>
+								<pre class="brush: js;">
+									$('.wm-grid').wmGridMaster({
+										has_detail : true
+									});
+								</pre>
+							</dd>
+							<dt style="text-align:left;">has_navigation</dt>
+							<dd>
+								<p>
+									(boolean) - define se o detalhe terá navegação de next/prev. <br>Exemplo:
+								</p>
+								<pre class="brush: js;">
+									$('.wm-grid').wmGridMaster({
+										has_navigation : true
+									});
+								</pre>
+							</dd>
+							<dt style="text-align:left;">navigation_position</dt>
+							<dd>
+								<p>
+									(string) - Seta a posição vertical dos botões de navegação dentro do detalhe. Opções: [none, top, middle, bottom], onde:<br>
+									<strong>none</strong> = não será feito nenhum posicionamento.<br>
+									<strong>top</strong> = posiciona no topo do detalhe.<br>
+									<strong>middle</strong> = posiciona no meio do detalhe. <br>
+									<strong>bottom</strong> = posiciona no bottom do detalhe.
+									<br>Exemplo:
+								</p>
+								<pre class="brush: js;">
+									$('.wm-grid').wmGridMaster({
+										navigation_position : 'middle'
+									});
+								</pre>
+							</dd>
+							<dt style="text-align:left;">thumbs_height</dt>
+							<dd>
+								<p>
+									(string or int) - seta a altura dos thumbnails. Opções: [equal-width, row-equal-width, int], onde: <br>
+									<strong>equal-width</strong> = manterá a altura proporcional a largura automaticamente.<br>
+									<strong>row-equal-width</strong> = manterá a altura dos elementos de mesma linha igual ao elemento de maior altura.<br>
+									<strong>int</strong> = o valor em pixel da altura que deseja.
+									<br>Exemplo:
+								</p>
+								<pre class="brush: js;">
+									$('.wm-grid').wmGridMaster({
+										thumbs_height : 'equal-width'
+									});
+								</pre>
+							</dd>
+							<dt style="text-align:left;">spaces</dt>
+							<dd>
+								<p>
+									(object js) Objeto para configurar o espaçamento entre os thumbnails e o padding do wrap do grid
+								</p>
+								<dl class="dl-horizontal">
+									<dt style="text-align:left;">padding</dt>
+									<dd>
+										<p>
+											(int) O espaçamento entre os thumbinail.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												spaces : {
+													padding : 5
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">wrap</dt>
+									<dd>
+										<p>
+											(boolean) Indica se o wrpa do grid terá um padding. A largura do mesmo será o valor definido em <em>spaces.padding</em>.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												spaces : {
+													wrap : true
+												},
+											});
+										</pre>
+									</dd>
+								</dl>
+							</dd>
+							<dt style="text-align:left;">arrow_detail</dt>
+							<dd>
+								<p>
+									(object js) Objeto para configurar a seta que indica a posição do conteúdo aberto em relação ao seu thumbinail.
+								</p>
+								<dl class="dl-horizontal">
+									<dt style="text-align:left;">has_arrow</dt>
+									<dd>
+										<p>
+											(boolean) Determina se terá a seta ou não.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												arrow_detail : {
+													has_arrow : true
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">arrow_size</dt>
+									<dd>
+										<p>
+											(int) Seta a largura da seta em pixels.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												arrow_detail : {
+													arrow_size : 10
+												},
+											});
+										</pre>
+									</dd>
+								</dl>
+							</dd>
+							<dt style="text-align:left;">speeds</dt>
+							<dd>
+								<p>
+									(object js) Objeto para configurar as velocidades das animações do grid.
+								</p>
+								<dl class="dl-horizontal">
+									<dt style="text-align:left;">content_down</dt>
+									<dd>
+										<p>
+											(int) Determina a velociade do slideDown da visualização do detalhe do thumbnail.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												speeds : {
+													content_down : 300
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">content_up</dt>
+									<dd>
+										<p>
+											(int) Determina a velociade do slideUp da visualização do detalhe do thumbnail.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												speeds : {
+													content_up : 300
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">go_to_opened</dt>
+									<dd>
+										<p>
+											(int) Determina a velociade do scroll até o thumbnail selecionado. Terá efeito caso go_to_type seja diferente de 'none'.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												speeds : {
+													go_to_opened : 300
+												},
+											});
+										</pre>
+									</dd>
+								</dl>
+							</dd>
+							<dt style="text-align:left;">ajax</dt>
+							<dd>
+								<p>
+									(object js) Objeto para configurar as requisiçoes ajax do grid.
+								</p>
+								<dl class="dl-horizontal">
+									<dt style="text-align:left;">has_ajax</dt>
+									<dd>
+										<p>
+											(boolean) Indica se usará a função padrão do grid para carregamento de mais thumbnails via ajax.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												ajax : {
+													has_ajax : true
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">method</dt>
+									<dd>
+										<p>
+											(string) Seta o tipo da requisição do carregamento de mais thumbnails. Opções: [GET, POST].
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												ajax : {
+													method : 'GET'
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">data</dt>
+									<dd>
+										<p>
+											(object js) Objeto com os dados a serem enviados na requisição de mais thumbnails.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												ajax : {
+													data : { page : 2, filter : 'a' }
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">url</dt>
+									<dd>
+										<p>
+											(string) Seta a Url para a requisição do carregamento de mais thumbnails.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												ajax : {
+													url : 'http://domain.com.br'
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">button_text</dt>
+									<dd>
+										<p>
+											(string) Seta o texto do botão gerado pelo grid para o carregamento de mais thumbnails.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												ajax : {
+													button_text : 'Load more'
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">load_content</dt>
+									<dd>
+										<p>
+											(string) Seta o texto ou html do loading gerado pelo grid para o carregamento de mais thumbnails. Será exibido durante o carregamento ajax.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												ajax : {
+													load_content : 'carregando...'
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">has_ajax_detail</dt>
+									<dd>
+										<p>
+											(boolean) Determina se o carregamento do detalhe será feito via Ajax.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												ajax : {
+													has_ajax_detail : true
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">method_detail</dt>
+									<dd>
+										<p>
+											(string)  Seta o tipo da requisição do carregamento do detalhe. Opções: [GET, POST].
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												ajax : {
+													method_detail : 'GET'
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">data_detail</dt>
+									<dd>
+										<p>
+											(object js) Objeto com os dados a serem enviados na requisição do detalhe. 
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												ajax : {
+													data_detail : { id : 2 }
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">url_detail</dt>
+									<dd>
+										<p>
+											(string) Seta a Url para a requisição do detalhe. 
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												ajax : {
+													url_detail : 'http://domain.com.br'
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">load_content_detail</dt>
+									<dd>
+										<p>
+											(string) Seta o texto ou html do loading gerado pelo grid para o carregamento do detalhe. Será exibido durante o carregamento ajax.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												ajax : {
+													load_content_detail : 'Carregando...'
+												},
+											});
+										</pre>
+									</dd>
+								</dl>
+							</dd>
+							<dt style="text-align:left;">selectors</dt>
+							<dd>
+								<p>
+									(object js) Objeto para customizar os seletores do plugin (Apenas classes css.). OBS: Precisam estar de acordo com os que você setou no HTML.
+								</p>
+								<dl class="dl-horizontal">
+									<dt style="text-align:left;">grid_has_opened</dt>
+									<dd>
+										<p>
+											(string) Classe adicionada dinamicamente no grid quando existe algum conteúdo aberto.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												selectors : {
+													grid_has_opened : 'wm-grid-has-opened'
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">wrap</dt>
+									<dd>
+										<p>
+											(string) Classe do wrap dos itens.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												selectors : {
+													wrap : 'wm-grid-wrap'
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">item</dt>
+									<dd>
+										<p>
+											(string) Classe dos itens.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												selectors : {
+													item : 'wm-grid-item'
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">thumbs</dt>
+									<dd>
+										<p>
+											(string) Classe do container do thumbnail.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												selectors : {
+													thumbs : 'wm-grid-thumb'
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">item_opened</dt>
+									<dd>
+										<p>
+											(string) Classe adicionada dinamicamente no item aberto para visualização do seu detalhe.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												selectors : {
+													item_opened : 'wm-grid-item-opened'
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">items_last_row</dt>
+									<dd>
+										<p>
+											(string) Classe adicionada dinamicamente nos itens da última linha.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												selectors : {
+													items_last_row : 'wm-grid-of-last-row'
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">content</dt>
+									<dd>
+										<p>
+											(string) Classe do wrap do detalhe.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												selectors : {
+													content : 'wm-grid-content'
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">body_content</dt>
+									<dd>
+										<p>
+											(string) Classe do container do conteúdo de detalhe.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												selectors : {
+													body_content : 'wm-grid-body'
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">button_close</dt>
+									<dd>
+										<p>
+											(string) Classe adicionada dinamicamente no botão de fechar o detalhe gerado pelo grid.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												selectors : {
+													button_close : 'wm-grid-close'
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">button_next</dt>
+									<dd>
+										<p>
+											(string) Classe adicionada dinamicamente no botão de próximo detalhe gerado pelo grid.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												selectors : {
+													button_next : 'wm-grid-next'
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">button_prev</dt>
+									<dd>
+										<p>
+											(string) Classe adicionada dinamicamente no botão de detalhe anterior gerado pelo grid.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												selectors : {
+													button_prev : 'wm-grid-prev'
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">arrow_detail</dt>
+									<dd>
+										<p>
+											(string) Classe adicionada dinamicamente na seta indicativa do detalhe gerada pelo grid.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												selectors : {
+													arrow_detail : 'wm-grid-arrow'
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">ajax_button_container</dt>
+									<dd>
+										<p>
+											(string) Classe adicionada dinamicamente no container do botão de carregar mais thumbnails gerado pelo grid.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												selectors : {
+													ajax_button_container : 'wm-grid-action'
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">ajax_button</dt>
+									<dd>
+										<p>
+											(string) Classe adicionada dinamicamente no botão de carregar mais thumbnails gerado pelo grid.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												selectors : {
+													ajax_button : 'wm-grid-add-more'
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">ajax_load_container</dt>
+									<dd>
+										<p>
+											(string) Classe adicionada dinamicamente no container do loading gerado pelo grid.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												selectors : {
+													ajax_load_container : 'wm-grid-loading'
+												},
+											});
+										</pre>
+									</dd>
+								</dl>
+							</dd>
+							<dt style="text-align:left;">callbacks</dt>
+							<dd>
+								<p>
+									(object js) Objeto para configurar os callbacks do grid.
+								</p>
+								<dl class="dl-horizontal">
+									<dt style="text-align:left;">CB_beforeInitGrid</dt>
+									<dd>
+										<p>
+											(function) Executado antes da inicialização completa do grid.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												callbacks : {
+													CB_beforeInitGrid : function(){
+														console.log('CB_beforeInitGrid');
+													}
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">CB_afterInitGrid</dt>
+									<dd>
+										<p>
+											(function) Executado depois da inicialização completa do grid.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												callbacks : {
+													CB_afterInitGrid : function(){
+														console.log('CB_afterInitGrid');
+													}
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">CB_beforeLoadAjax</dt>
+									<dd>
+										<p>
+											(function) Executado antes de fazer a requisição de mais thumbnails. Só roda quando <em>ajax.has_ajax</em> está definido como true.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												callbacks : {
+													CB_beforeLoadAjax : function(){
+														console.log('CB_beforeLoadAjax');
+													}
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">CB_afterLoadAjax</dt>
+									<dd>
+										<p>
+											(function) Executado depois que a requisição ajax de mais thumbnails responde. Só roda quando <em>ajax.has_ajax</em> está definido como true.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												callbacks : {
+													CB_afterLoadAjax : function(){
+														console.log('CB_afterLoadAjax');
+													}
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">CB_beforeOpenDetail</dt>
+									<dd>
+										<p>
+											(function) Executado antes de abrir o detalhe do thumbnail. Roda se <em>has_detail</em> estiver definido como true.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												callbacks : {
+													CB_beforeOpenDetail : function(){
+														console.log('CB_beforeOpenDetail');
+													}
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">CB_afterOpenDetail</dt>
+									<dd>
+										<p>
+											(function) Executado depois de abrir o detalhe do thumbnail. Roda se <em>has_detail</em> estiver definido como true.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												callbacks : {
+													CB_afterOpenDetail : function(){
+														console.log('CB_afterOpenDetail');
+													}
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">CB_beforeAjaxOpenDetail</dt>
+									<dd>
+										<p>
+											(function) Executado antes da requisição ajax do conteúdo do detalhe do thumbnail. Roda se <em>has_detail</em> e <em>ajax.has_ajax_detail</em> estiverem definidos como true.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												callbacks : {
+													CB_beforeAjaxOpenDetail : function(){
+														console.log('CB_beforeAjaxOpenDetail');
+													}
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">CB_afterAjaxOpenDetail</dt>
+									<dd>
+										<p>
+											(function) Executado depois da requisição ajax do conteúdo do detalhe do thumbnail. Roda se <em>has_detail</em> e <em>ajax.has_ajax_detail</em> estiverem definidos como true.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												callbacks : {
+													CB_afterAjaxOpenDetail : function(){
+														console.log('CB_afterAjaxOpenDetail');
+													}
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">CB_closeDetail</dt>
+									<dd>
+										<p>
+											(function) Executado quando o detalhe do thumbnail é fechado.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												callbacks : {
+													CB_closeDetail : function(){
+														console.log('CB_closeDetail');
+													}
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">CB_nextDetail</dt>
+									<dd>
+										<p>
+											(function) Executado quando se navega pra o próximo thumbnail pelo botão de next gerado pelo grid.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												callbacks : {
+													CB_nextDetail : function(){
+														console.log('CB_nextDetail');
+													}
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">CB_prevDetail</dt>
+									<dd>
+										<p>
+											(function) Executado quando se navega pra o thumbnail anterior pelo botão de prev gerado pelo grid.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												callbacks : {
+													CB_prevDetail : function(){
+														console.log('CB_prevDetail');
+													}
+												},
+											});
+										</pre>
+									</dd>
+									<dt style="text-align:left;">CB_goToDetail</dt>
+									<dd>
+										<p>
+											(function) Executado quando se usa a função <em>goTo()</em> da API do grid.
+											<br>Exemplo:
+										</p>
+										<pre class="brush: js;">
+											$('.wm-grid').wmGridMaster({
+												callbacks : {
+													CB_goToDetail : function(){
+														console.log('CB_goToDetail');
+													}
+												},
+											});
+										</pre>
+									</dd>
+								</dl>
+							</dd>
+							<dt style="text-align:left;">responsive</dt>
+							<dd>
+								<p>
+									(array) Um array de objetos que configura algumas opções para a resolução definida pelo usuário.
+								</p>
+								<dl class="dl-horizontal">
+									<dd>
+										<dt class="dl-horizontal">
+											<dt style="text-align:left;">size:</dt>
+										</dt>
+										<dd>
+											<p>
+												Aqui se define a resolução cujas configurações a seguir, em options, se aplicarão.<br>
+												Exemplo:
+											</p>
+											<pre class="brush: js;">
+												$('.wm-grid').wmGridMaster({
+													responsive : [
+														{
+															size : 992,
+															options : {}
+														}
+													],
+												});
+											</pre>
+										</dd>
+										<dt class="dl-horizontal">
+											<dt style="text-align:left;">options:</dt>
+										</dt>
+										<dd>
+											<p>
+												Onde se ajusta algumas configurações globais para se aplicarem na resolução definia em <em>size</em>. Atenção: Apenas as opções mostradas no exemplo abaixo podem ser customizadas em <em>responsive</em>.<br>
+												Exemplo:
+											</p>
+											<pre class="brush: js;">
+												$('.wm-grid').wmGridMaster({
+													responsive : [
+														{
+															size : 992,
+															options : {
+																cols : 6, 
+																spaces : {
+																	padding : 3,
+																	wrap : true
+																},
+																thumbs_height : 'equal-width'
+															}
+														}
+													],
+												});
+											</pre>
+										</dd>
+									</dd>
+								</dl>
+							</dd>
+						</dl><br><br>
+
+						<h3>
+			  				Configurações Default
+			  			</h3>
+			  			<p>
+			  				Segue as configurações default do plugin
+			  			</p>
+			  			<pre class="brush: js;">
+				  			var defaults = {
+								cols : 8,
+								close_button_text : 'X',
+								next_button_text : '&amp;gt;',
+								prev_button_text : '&amp;lt;',
+								go_to_type : 'middle-thumb',
+								has_detail : true,
+								has_navigation : true, 
+								navigation_position : 'middle', 
+								spaces : {
+									padding : 5,
+									wrap : true
+								},
+								thumbs : {
+									height : 'equal-width'
+								},
+								arrow_detail : {
+									has_arrow : true,
+									arrow_size : 10
+								},
+								selectors : {
+									grid_has_opened : 'wm-grid-has-opened',
+									wrap : 'wm-grid-wrap',
+									item : 'wm-grid-item',
+									thumbs : 'wm-grid-thumb',
+									item_opened : 'wm-grid-item-opened',
+									items_last_row : 'wm-grid-of-last-row',
+									content : 'wm-grid-content',
+									body_content : 'wm-grid-body',
+									button_close : 'wm-grid-close',
+									button_next : 'wm-grid-next',
+									button_prev : 'wm-grid-prev',
+									arrow_detail : 'wm-grid-arrow',
+									ajax_button_container : 'wm-grid-action',
+									ajax_button : 'wm-grid-add-more',
+									ajax_load_container : 'wm-grid-loading'
+								},
+								speeds : {
+									content_down : 300,
+									content_up : 300,
+									go_to_opened : 200
+								},
+								ajax : {
+									has_ajax : false, 
+									method : 'GET', 
+									data : {},
+									url : '',
+									button_text : 'Add Mais',
+									load_content : 'carregando...',
+									has_ajax_detail : false, 
+									method_detail : 'GET',
+									data_detail : {},
+									url_detail : '', 
+									load_content_detail : 'carregando...'
+								},
+								callbacks : {
+						            CB_beforeInitGrid : false,
+						            CB_afterInitGrid : false,
+						            CB_beforeLoadAjax : false,
+						            CB_afterLoadAjax :  false,
+						            CB_beforeOpenDetail :  false,
+						            CB_afterOpenDetail :  false,
+						            CB_beforeAjaxOpenDetail :  false,
+						            CB_afterAjaxOpenDetail :  false,
+						            CB_closeDetail :  false,
+						            CB_nextDetail :  false,
+						            CB_prevDetail :  false,
+						            CB_goToDetail :  false
+						        },
+								responsive : [
+									{
+										size : 992,
+										options : {
+											cols : 6, 
+											spaces : {
+												padding : 3,
+												wrap : true
+											},
+											thumbs : {
+												height : 'equal-width'
+											}
+										}
+									},
+									{
+										size : 768,
+										options : {
+											cols : 4,
+											spaces : {
+												padding : 2,
+												wrap : true
+											},
+											thumbs : {
+												height : 'equal-width'
+											}
+										}
+									},
+									{
+										size : 400,
+										options : {
+											cols : 2,
+											spaces : {
+												padding : 1,
+												wrap : true
+											},
+											thumbs : {
+												height : 'equal-width'
+											}
+										}
+									}
+								]
+							};
+						</pre><br><br>
+
+
+						<h3>
+			  				Funções da Api do Grid
+			  			</h3>
+			  			<p>
+			  				Algumas funções do Grid podem ser acessadas externamente.
+			  			</p>
+			  			<br>
+
+			  			<h4>Função init()</h4>
+			  			<p>
+			  				Chamada para inicializar o Grid. Também é ideal para ser chamada após uma chamada Ajax feita de maneira customizada.<br> Exemplo:
+			  			</p>
+			  			<pre class="brush: js;">
+							var myGrid = $('.wm-grid').wmGridMaster({});
+							myGrid.init();
+
+							$('.add-more').on('click', function(e){
+								$.ajax({
+									method: "GET",
+									url: "ajax.php",
+									data: {}
+								})
+								.done(function(msg) {
+
+									// note que o .wm-grid-wrap é o wrap dos itens do grid
+									$('.wm-grid .wm-grid-wrap').append(msg);
+									myGrid.init();
+
+								});
+
+								e.preventDefault();
+								return false;
+							});
+						</pre>
+						<br><br>
+
+						<h4>Função goTo()</h4>
+						<p>
+							Usada para abrir o detalhe de um item específico passado por parâmetro. São necessário 2 parâmetros. o 1º é o Grid, e o segundo o index do elemento a ser aberto. (o index inicia do zero).<br> Exemplo:
+						</p>
+						<pre class="brush: js;">
+							var myGrid = $('.wm-grid').wmGridMaster({});
+							myGrid.init();
+
+							$('.go-to-6').on('click', function(){
+
+								myGrid.goTo($('.wm-grid'), 6);
+
+								return false;
+							});
+						</pre>
+						<br><br>
+							
+						<h4>Função closeDetail()</h4>
+						<p>
+							Usada para fechar o detalhe aberto do Grid. O parâmetro requerido é o Grid.<br> Exemplo:
+						</p>
+						<pre class="brush: js;">
+							var myGrid = $('.wm-grid').wmGridMaster({});
+							myGrid.init();
+
+							$('.close-detail').on('click', function(){
+
+								myGrid.closeDetail($('.wm-grid'));
+
+								return false;
+							});
+						</pre>
+						<br><br>
+
+			  		</article>
+
+			  		<div class="btn-group btn-group-justified">
+				    	<a href="https://github.com/welisonmenezes/wm-gridmaster" target="_blank" class="btn btn-primary" title="WM Gridfolio no Github">GITHUB</a>
+
+				    	<a href="https://twitter.com/WelisonMenezes" target="_blank" class="btn btn-primary" title="Perfil no Twitter">TWITTER</a>
+
+				    	<a href="http://welisonmenezes.com.br/" target="_blank" class="btn btn-primary" title="Portifólio Welison Menezes">WEBSITE</a>
+				    </div>
+			  		
+			  	</div>
+
+			</div>
+
+		</div><!-- /.container --> <br>
+
+		<br><br><br>
+
+		<footer class="footer">
+			<div class="container">
+			<p class="text-muted">&copy; Todos os direitos reservados. 2014 || Welison Menezes</p>
+			</div>
+		</footer>
+
+		<script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				SyntaxHighlighter.all();
+			});
+		</script>
+	</body>
+</html>

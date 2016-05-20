@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+		<title>WM GridMaster Exemplo</title>
+		<link rel="stylesheet" type="text/css" href="../wm-gridmaster/jquery.wm-gridmaster-1.0.min.css">
+		<style type="text/css">
+			.wm-grid img{
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="body-wrap">
+
+			<h1>WM GridMaster - Exemplo Simples</h1>
+			<p>
+				O Exemplo abaixo mostra um grid apenas com thumbnails, sem detalhes para exibir
+			</p>
+			<br>
+
+			<div class="wm-grid">
+				<div class="wm-grid-container">
+					<div class="wm-grid-wrap">
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-1.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-2.jpg" alt="">
+							</div>
+						</div>
+						
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-3.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-4.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-5.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-6.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-7.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-8.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-9.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-10.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-11.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-12.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-13.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-14.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-15.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-16.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-17.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-18.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-19.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-20.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-21.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-22.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-23.jpg" alt="">
+							</div>
+						</div>
+
+						<div class="wm-grid-item">
+							<div class="wm-grid-thumb">
+								<img src="images/img-24.jpg" alt="">
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<script type="text/javascript" src="../assets/js/jquery-1.11.3.min.js"></script>
+		<script src="../wm-gridmaster/jquery.wm-gridmaster-1.0.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var myGrid = $('.wm-grid').wmGridMaster({
+					cols : 10,
+					has_detail : false
+				});
+				myGrid.init();
+			});
+		</script>
+	</body>
+</html>
