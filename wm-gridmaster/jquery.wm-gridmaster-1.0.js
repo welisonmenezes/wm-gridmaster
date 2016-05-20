@@ -818,6 +818,7 @@
 		else
 		{
 			//removeMarginBottomItem($item, false);
+			setMarginBottomItem($item, false);
 
 			$box.show();
 			$item.addClass(settings.selectors.item_opened);
