@@ -801,7 +801,7 @@
 
 		if(animated)
 		{
-			removeMarginBottomItem($item, true);
+			//removeMarginBottomItem($item, true);
 
 			setMarginBottomItem($item, true);
 
@@ -817,7 +817,7 @@
 		}
 		else
 		{
-			removeMarginBottomItem($item, false);
+			//removeMarginBottomItem($item, false);
 
 			$box.show();
 			$item.addClass(settings.selectors.item_opened);
