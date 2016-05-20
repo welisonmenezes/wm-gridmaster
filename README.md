@@ -1,7 +1,7 @@
-wm-gridfolio
+wm-gridmaster
 ===========
 
-WM Gridmaster - Plugin jQuery para galeria de conteúdo estilo portfólio
+WM GridMaster - Plugin jQuery para galeria de conteúdo estilo portfólio, com navegação.
 
 ## Instalação
 
@@ -21,4 +21,4 @@ WM Gridmaster - Plugin jQuery para galeria de conteúdo estilo portfólio
 
 ## Para mais detalhes visite a página do plugin
 
-[Website do Plugin WM Gridfolio](http://welisonmenezes.com.br/extras/plugins/jquery/wm-gridmaster/)
+[Website do Plugin WM GridMaster](http://welisonmenezes.com.br/extras/plugins/jquery/wm-gridmaster/)
